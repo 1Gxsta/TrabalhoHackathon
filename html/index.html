@@ -1,17 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PetMind</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="corpo">
-        <div class="bloco">A</div>
-        <div class="bloco">b</div>
-        <div class="bloco">c</div>
-        <div class="bloco">d</div>
+    <div class="grid-container">
+
+        <div class="card login-box">
+            <img src="https://via.placeholder.com/80x80?text=Logo" alt="Logo">
+            <h2>PetMind</h2>
+            <input type="email" placeholder="E-mail">
+            <input type="password" placeholder="Senha">
+            <button class="btn" onclick="login()">Entrar</button>
+        </div>
+
+        <div class="card">
+            <div class="sidebar">
+                <div>🏠</div>
+                <div>📄</div>
+                <div>👤</div>
+                <div>✎</div>
+            </div>
+            <div class="card-content">
+                <div class="header">Olá, Dr. Ricardo!</div>
+                <div>📊 Consultas por Espécie (Gráfico)</div>
+                <div style="background: #d3f1e6; padding: 10px; border-radius: 10px; margin: 10px 0;">Alertas de Vacinação</div>
+                <button class="btn">+ Nova Consulta</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="sidebar">
+                <div>🏠</div>
+                <div>📄</div>
+                <div>👤</div>
+                <div>✎</div>
+            </div>
+            <div class="card-content">
+                <div class="header">Cadastrar Pet</div>
+                <div class="avatar-section">
+                    <div class="avatar-upload">📷</div>
+                    <div style="flex:1;">
+                        <input type="text" placeholder="Nome">
+                        <div class="row">
+                            <input class="half" type="text" placeholder="Raça">
+                            <input class="half" type="number" placeholder="Idade">
+                        </div>
+                        <input type="text" placeholder="Peso">
+                    </div>
+                </div>
+                <button class="btn">Cadastrar</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="sidebar">
+                <div>🏠</div>
+                <div>📄</div>
+                <div>👤</div>
+                <div>✎</div>
+            </div>
+            <div class="card-content">
+                <div class="header">Consulta</div>
+                <label class="checkbox-row"><input type="checkbox"><span>Febre</span></label>
+                <label class="checkbox-row"><input type="checkbox"><span>Perda de apetite</span></label>
+                <label class="checkbox-row"><input type="checkbox"><span>Vômito</span></label>
+                <label class="checkbox-row"><input type="checkbox"><span>Diarreia</span></label>
+                <textarea rows="3" placeholder="Observações"></textarea>
+            </div>
+        </div>
     </div>
+    <script>
+        function login() {
+            alert("Login simulado! Redirecionando...");
+            // window.location.href = "dashboard.html"; 
+        }
+    </script>
 </body>
 </html>
