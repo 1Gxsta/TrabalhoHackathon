@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PetMind – Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="sidebar">
+      <a href="index.html" class="logout-link">← Log Out</a>
+      <div>🏠</div>
+      <div>📄</div>
+      <div>👤</div>
+      <div>✎</div>
+    </div>
+    <div class="card-content">
+      <div class="header">Olá, Dr. Ricardo!</div>
+      <div>📊 Consultas por Espécie (Gráfico)</div>
+      <div style="background: #d3f1e6; padding: 10px; border-radius: 10px; margin: 10px 0;">
+        Alertas de Vacinação
+      </div>
+      <button class="btn" onclick="window.location.href='cadastrar.html'">+ Nova Consulta</button>
+    </div>
+  </div>
+  <script>
+    // Se futuramente precisar carregar dados ou inicializar algo no dashboard,
+    // pode colocar suas funções JS aqui.
+    // Exemplo de função de mock (não faz nada por enquanto):
+    function initDashboard() {
+      console.log('Dashboard carregado.');
+    }
+    // Executa ao abrir a página
+    window.onload = initDashboard;
+  </script>
+</body>
+</html>
