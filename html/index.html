@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>PetMind</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="grid-container">
 
         <div class="card login-box">
-            <img src="https://via.placeholder.com/80x80?text=Logo" alt="Logo">
-            <h2>PetMind</h2>
+            <img src="../imagens/Logo.jpg" alt="Logo">
             <input type="email" placeholder="E-mail">
             <input type="password" placeholder="Senha">
             <button class="btn" onclick="login()">Entrar</button>
@@ -31,27 +30,39 @@
             </div>
         </div>
         <div class="card">
-            <div class="sidebar">
-                <div>🏠</div>
-                <div>📄</div>
-                <div>👤</div>
-                <div>✎</div>
-            </div>
-            <div class="card-content">
-                <div class="header">Cadastrar Pet</div>
-                <div class="avatar-section">
-                    <div class="avatar-upload">📷</div>
-                    <div style="flex:1;">
-                        <input type="text" placeholder="Nome">
-                        <div class="row">
-                            <input class="half" type="text" placeholder="Raça">
-                            <input class="half" type="number" placeholder="Idade">
-                        </div>
-                        <input type="text" placeholder="Peso">
-                    </div>
+        <div class="sidebar">
+            <div>🏠</div>
+            <div>📄</div>
+            <div>👤</div>
+            <div>✎</div>
+        </div>
+        <div class="card-content">
+            <div class="header">Cadastrar Pet</div>
+            <div class="avatar-section">
+            <div class="avatar-upload">📷</div>
+            <div style="flex:1;">
+                <div class="name-above">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="">
                 </div>
-                <button class="btn">Cadastrar</button>
+                <div class="row">
+                <div class="name-above half">
+                    <label for="raca">Raça</label>
+                    <input id="raca" type="text" placeholder="">
+                </div>
+                <div class="name-above half">
+                    <label for="idade">Idade</label>
+                    <input id="idade" type="number" placeholder="">
+                </div>
+                </div>
+                <div class="name-above">
+                <label for="peso">Peso</label>
+                <input id="peso" type="text" placeholder="">
+                </div>
             </div>
+            </div>
+            <button class="btn">Cadastrar</button>
+        </div>
         </div>
         <div class="card">
             <div class="sidebar">
