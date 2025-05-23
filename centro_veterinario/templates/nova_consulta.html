@@ -1,27 +1,51 @@
+
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>Nova Consulta</title></head>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Registrar Nova Consulta</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 <body>
-    <h1>Registrar Nova Consulta</h1>
-    <form method="post">
-        Pet:
-        <select name="id_animal" required>
-            <option value="">Selecione</option>
-            {% for a in animais %}
+  <div class="card">
+    <div class="back-wrapper">
+      <a href="/" class="link-back">Voltar</a>
+    </div>
+    <h1 class="header">Registrar Nova Consulta</h1>
+    <form method="post" class="consulta-form">
+      <div class="field-wrapper">
+        <label for="id_animal">Pet:</label>
+        <select id="id_animal" name="id_animal" required>
+          <option value="">Selecione</option>
+          {% for a in animais %}
             <option value="{{ a.id }}">{{ a.nome }}</option>
-            {% endfor %}
-        </select><br><br>
-
-        <label><input type="checkbox" name="vomito"> Vômito</label><br>
-        <label><input type="checkbox" name="febre"> Febre</label><br>
-        <label><input type="checkbox" name="perda_apetite"> Perda de Apetite</label><br>
-        <label><input type="checkbox" name="diarreia"> Diarreia</label><br><br>
-
-        Descrição:<br>
-        <textarea name="descricao" rows="4" cols="50"></textarea><br><br>
-
-        <button type="submit">Salvar</button>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="toggle-group-vertical">
+        <div class="checkbox-group">
+          <input type="checkbox" id="vomito" name="vomito">
+          <label for="vomito" class="toggle-btn">Vômito</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="febre" name="febre">
+          <label for="febre" class="toggle-btn">Febre</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="perda_apetite" name="perda_apetite">
+          <label for="perda_apetite" class="toggle-btn">Perda de Apetite</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="diarreia" name="diarreia">
+          <label for="diarreia" class="toggle-btn">Diarreia</label>
+        </div>
+      </div>
+      <div class="field-wrapper">
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="4"></textarea>
+      </div>
+      <button class="btn" type="submit">Salvar</button>
     </form>
-    <p><a href="/consultas">Voltar ao Histórico</a></p>
+  </div>
 </body>
 </html>

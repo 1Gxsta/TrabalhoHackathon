@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>Cadastro Usuário</title></head>
+<head>
+  <meta charset="utf-8">
+  <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 <body>
-    <h1>Cadastro de Usuário</h1>
-    {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+   <div class="card login-box">
+    <div class="back-wrapper">
+        <a href="/" class="link-back">Voltar</a>
+    </div>
+    <h1 class="header">Cadastro de Usuário</h1>
+    {% if error %}
+        <div class="error-message">{{ error }}</div>
+    {% endif %}
     <form method="post">
-        Nome: <input type="text" name="nome" required><br>
-        Email: <input type="email" name="email" required><br>
-        Senha: <input type="password" name="senha" required><br>
-        <button type="submit">Cadastrar</button>
+        <div class="name-above">
+            <label for="nome">
+            Nome:
+            </label>
+            <input type="text" name="nome" placeholder="Nome" required>
+        </div>
+        <div class="name-above">
+            <label for="email">
+            Email:
+            </label>
+            <input type="email" name="email" placeholder="E-mail" required>
+        </div>
+        <div class="name-above">
+            <label for="senha">
+            Senha:
+            </label>
+            <input type="password" name="senha" placeholder="Senha" required>
+        </div>
+        <button class="btn" type="submit" class="btn-submit">Cadastrar</button>
     </form>
-    <p><a href="/">Voltar</a></p>
+  </div>
 </body>
 </html>

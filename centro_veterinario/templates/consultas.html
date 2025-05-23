@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>Consultas</title></head>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Histórico de Consultas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 <body>
-    <h1>Histórico de Consultas</h1>
-    <a href="/nova_consulta">Nova Consulta</a>
-    <table>
-        <thead>
-            <tr>
-                <th>Pet</th><th>Data</th><th>Vômito</th><th>Febre</th>
-                <th>Perda Apetite</th><th>Diarreia</th><th>Descrição</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for c in consultas %}
-            <tr>
-                <td>{{ c.nome_animal }}</td>
-                <td>{{ c.data_consulta }}</td>
-                <td>{{ '✔' if c.vomito else '—' }}</td>
-                <td>{{ '✔' if c.febre else '—' }}</td>
-                <td>{{ '✔' if c.perda_apetite else '—' }}</td>
-                <td>{{ '✔' if c.diarreia else '—' }}</td>
-                <td>{{ c.descricao }}</td>
-            </tr>
-            {% else %}
-            <tr><td colspan="7">Nenhuma consulta cadastrada.</td></tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <p><a href="/">Voltar</a></p>
+  <div class="card">
+    <div class="back-wrapper">
+      <a href="/" class="link-back">Voltar</a>
+    </div>
+
+    <h1 class="header">Histórico de Consultas</h1>
+
+    <a href="/nova_consulta" style="width: 96%;" class="btn">Nova Consulta</a>
+
+    <div class="grid-consultas">
+      {% for c in consultas %}
+        <div class="consulta-card">
+          <h3 class="card-pet">{{ c.nome_animal }}</h3>
+          <p><strong>Data:</strong> {{ c.data_consulta }}</p>
+          <div class="sintomas">
+            <span class="{{ 'ok' if c.vomito else 'no' }}">Vômito</span>
+            <span class="{{ 'ok' if c.febre else 'no' }}">Febre</span>
+            <span class="{{ 'ok' if c.perda_apetite else 'no' }}">Perda de apetite</span>
+            <span class="{{ 'ok' if c.diarreia else 'no' }}">Diarreia</span>
+          </div>
+          <p class="card-desc">{{ c.descricao }}</p>
+        </div>
+      {% else %}
+        <p class="nenhuma">Nenhuma consulta cadastrada.</p>
+      {% endfor %}
+    </div>
+  </div>
 </body>
 </html>

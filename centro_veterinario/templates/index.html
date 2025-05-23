@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Centro Veterinário</h1>
-    <ul>
-        <li><a href="/cadastro">Cadastrar Usuário</a></li>
-        <li><a href="/cadastro_pet">Cadastrar Pet</a></li>
-        <li><a href="/consultas">Consultar Histórico</a></li>
-    </ul>
+    <div class="card">
+        <h1 class="header">Centro Veterinário</h1>
+        <ul>
+            <li><a class="btn" href="/cadastro_pet">Cadastrar Pet</a></li>
+            <li><a class="btn" href="/consultas">Consultar Histórico</a></li>
+            <li><a class="btn" href="/cadastro">Cadastrar Usuário</a></li>
+        </ul>
+    </div>
 </body>
 </html>
