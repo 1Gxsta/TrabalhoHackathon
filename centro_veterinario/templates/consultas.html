@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Consultas</title></head>
+<body>
+    <h1>Histórico de Consultas</h1>
+    <a href="/nova_consulta">Nova Consulta</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Pet</th><th>Data</th><th>Vômito</th><th>Febre</th>
+                <th>Perda Apetite</th><th>Diarreia</th><th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in consultas %}
+            <tr>
+                <td>{{ c.nome_animal }}</td>
+                <td>{{ c.data_consulta }}</td>
+                <td>{{ '✔' if c.vomito else '—' }}</td>
+                <td>{{ '✔' if c.febre else '—' }}</td>
+                <td>{{ '✔' if c.perda_apetite else '—' }}</td>
+                <td>{{ '✔' if c.diarreia else '—' }}</td>
+                <td>{{ c.descricao }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="7">Nenhuma consulta cadastrada.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a href="/">Voltar</a></p>
+</body>
+</html>

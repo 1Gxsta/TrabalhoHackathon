@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Nova Consulta</title></head>
+<body>
+    <h1>Registrar Nova Consulta</h1>
+    <form method="post">
+        Pet:
+        <select name="id_animal" required>
+            <option value="">Selecione</option>
+            {% for a in animais %}
+            <option value="{{ a.id }}">{{ a.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label><input type="checkbox" name="vomito"> Vômito</label><br>
+        <label><input type="checkbox" name="febre"> Febre</label><br>
+        <label><input type="checkbox" name="perda_apetite"> Perda de Apetite</label><br>
+        <label><input type="checkbox" name="diarreia"> Diarreia</label><br><br>
+
+        Descrição:<br>
+        <textarea name="descricao" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+    <p><a href="/consultas">Voltar ao Histórico</a></p>
+</body>
+</html>
